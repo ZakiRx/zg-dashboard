@@ -1,0 +1,98 @@
+$dark-blue: #042865;
+$blue: #0657e1;
+#navbar {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 250px;
+  padding: 15px;
+  background-color: #fff;
+  transition: 0.3s all ease-in-out;
+  @media screen and (max-width: 768px) {
+    margin-left: 0;
+  }
+  &.closed {
+    margin-left: 60px;
+    @media screen and (max-width: 768px) {
+      margin-left: 0;
+    }
+  }
+  nav {
+    top: 6px;
+    position: relative;
+    width: 30%;
+    z-index: 10;
+    ul {
+      display: flex;
+      position: relative;
+      justify-content: flex-end;
+      margin: 0;
+      & > li {
+        margin-right: 20px;
+      }
+      li {
+        &.profile {
+          @media screen and (max-width: 1200px) {
+            .name {
+              display: none;
+            }
+          }
+          position: relative;
+          .sub-profile {
+            position: absolute;
+            padding: 0;
+            list-style: none;
+            background: #ffffff;
+            box-shadow: rgb(14 75 213 / 18%) 0px 2px 8px 0px;
+            top: 35px;
+            text-align: center;
+            width: 135px;
+            border-radius: 3px;
+            display: none;
+            @media screen and (max-width: 1200px) {
+              left: -43px;
+              width: 104px;
+            }
+            &::before {
+              content: "";
+              position: absolute;
+              width: 17px;
+              height: 17px;
+              background-color: #0657e1;
+              display: block;
+              border-radius: 3px;
+              z-index: -1;
+              top: 1px;
+              left: 50%;
+              transform: rotate(45deg) translateX(-50%);
+            }
+            li {
+              a {
+                display: block;
+                width: 100%;
+                padding: 6px 11px;
+                &:hover {
+                  background-color: #0657e1;
+                  color: #fff;
+                }
+              }
+            }
+          }
+        }
+        i {
+          font-size: 23px;
+          position: relative;
+          top: 4px;
+        }
+      }
+    }
+  }
+  button {
+    &.toggle-sidebar {
+      padding: 3px 7px;
+      font-size: 24px;
+      color: $blue;
+      border: none;
+      box-shadow: #95959547 0px 0px 3px 0px;
+    }
+  }
+}

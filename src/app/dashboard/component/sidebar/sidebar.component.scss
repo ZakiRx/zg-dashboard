@@ -1,0 +1,143 @@
+$dark-blue: #042865;
+$blue: #0657e1;
+$medium: 768px;
+#sidebar {
+  display: inline-block;
+  background-color: #fff;
+  position: fixed;
+  height: 100%;
+  width: 250px;
+  box-shadow: rgb(217 217 217 / 20%) 0px 2px 8px 0px;
+  transition: 0.3s all ease-in-out;
+  @media screen and (max-width: $medium) {
+    top: 67px;
+    width: 100%;
+  }
+  &.closed {
+    width: 60px;
+    text-align: center;
+    li {
+      a {
+        i {
+          font-size: 25px;
+        }
+        span {
+          display: none;
+        }
+      }
+      &.last {
+        a {
+          i {
+            top: -20px;
+            right: 0;
+          }
+        }
+      }
+    }
+    @media screen and (max-width: $medium) {
+      width: 0;
+      overflow: hidden;
+    }
+  }
+  li {
+    padding: 15px;
+    &.last {
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      a {
+        position: relative;
+        i {
+          position: absolute;
+          right: 3px;
+          font-size: 25px;
+          top: -4px;
+        }
+      }
+    }
+    a {
+      display: block;
+      font-weight: 400;
+      color: #6c6c6c;
+      i {
+        margin-right: 6px;
+      }
+    }
+    &:hover {
+      background-color: #f7f7f752;
+      a {
+        font-weight: 500;
+        color: $blue;
+      }
+    }
+    &.active {
+      border-left: 3px solid $dark-blue;
+      font-weight: 600;
+      background-color: #ff76251a;
+    }
+  }
+  .profile-mobile {
+    display: none;
+    @media screen and (max-width: $medium) {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 20px;
+      align-items: center;
+      cursor: pointer;
+      background: #0758d11a;
+      .name {
+        font-weight: bold;
+        width: 100%;
+        color: $dark-blue;
+      }
+      .logout {
+        font-size: 25px;
+        width: 15%;
+        text-align: center;
+        a {
+          color: #f00;
+        }
+      }
+    }
+  }
+  .sidebar-header {
+    text-align: center;
+    margin-bottom: 30px;
+    transition: 0.8s all ease-in-out;
+    .logo {
+      font-weight: bold;
+      margin-top: 15px;
+      margin-bottom: 30px;
+    }
+    .search {
+      label {
+        position: relative;
+      }
+      &.hide {
+        display: none;
+      }
+    }
+    .search-field {
+      padding: 10px 12px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      outline: none;
+      padding-left: 36px;
+      background-color: #f3f3f3;
+      &:focus-visible {
+        border-color: $blue;
+        border-width: 1px;
+      }
+      @media screen and (max-width: $medium) {
+        width: 320px;
+      }
+    }
+    .search-icon {
+      position: absolute;
+      left: 8px;
+      top: -1px;
+      font-size: 22px;
+      color: #ccc;
+    }
+  }
+}

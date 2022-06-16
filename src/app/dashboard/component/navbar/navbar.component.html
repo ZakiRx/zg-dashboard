@@ -1,0 +1,28 @@
+<div id="navbar">
+  <button type="button" class="toggle-sidebar" (click)="toggleSidebar()">
+    <i class="bx bx-menu-alt-left"></i>
+  </button>
+  <nav>
+    <ul>
+      <li class="dark-mode">
+        <a href="#"><i class="bx bx-moon me-3"></i></a>
+      </li>
+      <li class="notification">
+        <a href="#"><i class="bx bx-bell me-3"></i></a>
+      </li>
+      <li class="messages">
+        <a href="#"><i class="bx bx-chat me-3"></i></a>
+      </li>
+      <li class="profile" (click)="subProfileToggle()">
+        <a href="#"
+          ><i class="bx bx-user-circle me-2"></i
+          ><span class="name">Zakaria guemi</span></a
+        >
+        <ol class="sub-profile">
+          <li><a href="#">Profile</a></li>
+          <li><a href="#">Setting</a></li>
+        </ol>
+      </li>
+    </ul>
+  </nav>
+</div>
